@@ -1,0 +1,13 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/press-contact/page": "app/(site)/press-contact/page.js",
+  "/(site)/author/page": "app/(site)/author/page.js",
+  "/(site)/speaking/page": "app/(site)/speaking/page.js",
+  "/(site)/laws/page": "app/(site)/laws/page.js",
+  "/(site)/newsletter/page": "app/(site)/newsletter/page.js",
+  "/(site)/laws/[slug]/page": "app/(site)/laws/[slug]/page.js",
+  "/(site)/book/page": "app/(site)/book/page.js",
+  "/(site)/contact/page": "app/(site)/contact/page.js",
+  "/(site)/press/page": "app/(site)/press/page.js"
+}
