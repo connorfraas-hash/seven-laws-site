@@ -3,7 +3,7 @@ import { Download, FileText, Image as ImageIcon, Mail, Linkedin } from 'lucide-r
 
 export default function PressContactPage() {
   return (
-    <div className="min-h-screen bg-background grain-texture">
+    <div className="min-h-screen bg-[#020617] grain-texture">
       {/* Hero Section */}
       <section className="py-32 md:py-48 border-b border-accent/10 cinematic-hero">
         <div className="container mx-auto px-6 max-w-screen-2xl relative z-10">

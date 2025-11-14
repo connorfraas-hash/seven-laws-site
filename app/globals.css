@@ -2270,7 +2270,7 @@ html, body {
     }
   }
   
-  /* Newsletter editorial hero background - clean, light, premium paper-like */
+  /* Newsletter editorial hero background - clean, light, premium paper-like on desktop */
   .newsletter-hero {
     position: relative;
     background: 
@@ -2283,6 +2283,20 @@ html, body {
       ),
       /* Base background */
       hsl(var(--background));
+  }
+  
+  /* Mobile: Override newsletter-hero to use dark background on all pages */
+  @media (max-width: 768px) {
+    .newsletter-hero {
+      background: 
+        radial-gradient(circle at top, rgba(46, 106, 255, 0.05) 0, transparent 55%),
+        radial-gradient(circle at bottom, rgba(220, 179, 96, 0.03) 0, transparent 60%),
+        #020617;
+    }
+    
+    .newsletter-hero::before {
+      opacity: 0.05;
+    }
   }
   
   .newsletter-hero::before {

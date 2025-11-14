@@ -4,7 +4,7 @@ import { Quote, ArrowRight, Linkedin } from 'lucide-react'
 
 export default function PressPage() {
   return (
-    <div className="min-h-screen bg-background grain-texture">
+    <div className="min-h-screen bg-[#020617] grain-texture">
 
       {/* Hero Section */}
       <section className="py-16 md:py-20 border-b border-accent/10 newsletter-hero relative overflow-hidden">

@@ -4,7 +4,7 @@ import { Linkedin, Mail, GraduationCap, Award, Quote } from 'lucide-react'
 
 export default function AuthorPage() {
   return (
-    <div className="min-h-screen bg-background grain-texture">
+    <div className="min-h-screen bg-[#020617] grain-texture">
       {/* Hero Section - Enhanced */}
       <section className="cinematic-hero py-12 md:py-16 border-b border-accent/10 relative">
         <div className="container mx-auto px-4 md:px-6 max-w-2xl md:max-w-3xl relative z-10">
