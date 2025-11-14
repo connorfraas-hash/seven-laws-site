@@ -51,10 +51,10 @@ const lawsContent = [
 
 export default function LawsPage() {
   return (
-    <div className="min-h-screen bg-background grain-texture">
+    <div className="min-h-screen bg-[#020617] grain-texture">
 
       {/* Hero Section */}
-      <section className="py-16 md:py-20 border-b border-accent/10 newsletter-hero relative overflow-hidden">
+      <section className="py-16 md:py-20 border-b border-accent/10 laws-hero relative overflow-hidden">
         {/* Compass Image - premium editorial accent, extremely subtle */}
         <div className="absolute top-2 right-2 md:top-4 md:right-4 lg:top-6 lg:right-6 w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 opacity-8 md:opacity-10 pointer-events-none z-0">
           <Image
@@ -106,8 +106,9 @@ export default function LawsPage() {
                 return (
                   <Link
                     key={law.slug}
+                    id={`law-${String(law.order).padStart(2, '0')}-${law.slug}`}
                     href={lawUrl}
-                    className="group block p-5 border border-accent/20 rounded-xl bg-card hover:shadow-xl hover:-translate-y-2 hover:border-accent/40 transition-all duration-500"
+                    className="group block p-5 border border-accent/20 rounded-xl bg-[#f7f5f2] hover:shadow-xl hover:-translate-y-2 hover:border-accent/40 transition-all duration-500"
                   >
                     <div className="mb-3">
                       <span className="text-xs uppercase tracking-[0.2em] text-accent font-medium">

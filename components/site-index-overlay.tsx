@@ -122,8 +122,7 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
     >
       <div
         ref={contentRef}
-        className="h-full overflow-y-auto overscroll-contain"
-        style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}
+        className="h-full overflow-y-auto overscroll-contain site-index-scroll flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="container mx-auto px-6 max-w-screen-2xl py-12 md:py-20 lg:py-24 relative z-10 min-h-full">
@@ -194,11 +193,36 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
                 <nav className="space-y-4">
                   {laws.map((law) => {
                     const isActive = pathname === law.url
+                    const lawId = `law-${String(law.order).padStart(2, '0')}-${law.slug}`
+                    const isOnLawsPage = pathname === '/laws'
+                    
+                    const handleLawClick = (e: React.MouseEvent) => {
+                      if (isOnLawsPage) {
+                        // If we're on the /laws page, scroll to the ID instead of navigating
+                        e.preventDefault()
+                        const element = document.getElementById(lawId)
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                          // Small delay before closing to allow scroll to start
+                          setTimeout(() => {
+                            onClose()
+                          }, 100)
+                        } else {
+                          // Fallback: navigate if element not found
+                          window.location.href = law.url
+                          onClose()
+                        }
+                      } else {
+                        // If we're not on /laws page, navigate normally
+                        onClose()
+                      }
+                    }
+                    
                     return (
                       <Link
                         key={law.slug}
                         href={law.url}
-                        onClick={onClose}
+                        onClick={handleLawClick}
                         className={cn(
                           'group flex items-start gap-4 text-white hover:text-[#C4A05A] transition-all duration-300',
                           isActive && 'text-[#C4A05A] font-semibold'
