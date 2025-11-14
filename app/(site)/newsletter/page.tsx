@@ -176,7 +176,7 @@ export default function NewsletterPage() {
                     type="email"
                     name="email"
                     placeholder="Your email address"
-                    className="w-full px-6 py-4 border border-accent/20 rounded-xl bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent/60 transition-colors text-base"
+                    className="w-full px-6 py-4 border border-accent/20 rounded-xl bg-white text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent/60 transition-colors text-base"
                     required
                   />
                 </div>

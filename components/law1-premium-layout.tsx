@@ -37,7 +37,7 @@ function FogPanel({ image, label, title, body }: FogPanelProps) {
 
 export function Law1PremiumLayout() {
   return (
-    <div className="min-h-screen bg-background grain-texture">
+    <div className="min-h-screen bg-[#020617] grain-texture">
 
       {/* Hero Section - Smoke Drift Cinematic Intro */}
       <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden border-b border-accent/10">

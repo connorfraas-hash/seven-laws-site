@@ -84,6 +84,38 @@ html, body {
   color: #e5e7eb;
 }
 
+/* Mobile: Force dark background globally, remove any yellow/light backgrounds */
+@media (max-width: 768px) {
+  html,
+  body {
+    background-color: #020617 !important;
+    background-image: none !important;
+  }
+
+  main {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+
+  /* Force all page wrappers to be transparent on mobile so dark body shows through */
+  .grain-texture,
+  [class*="page-shell"],
+  [class*="law-layout"],
+  [class*="article-shell"],
+  [class*="book-page"],
+  [class*="author-page"],
+  [class*="newsletter-shell"],
+  [class*="press-shell"] {
+    background-color: transparent !important;
+  }
+  
+  /* Override any bg-background classes that might resolve to light parchment */
+  [class*="bg-background"]:not(.home-hero):not(.home-hero *) {
+    background-color: transparent !important;
+    background-image: none !important;
+  }
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -webkit-overflow-scrolling: touch;
@@ -2291,7 +2323,8 @@ html, body {
       background: 
         radial-gradient(circle at top, rgba(46, 106, 255, 0.05) 0, transparent 55%),
         radial-gradient(circle at bottom, rgba(220, 179, 96, 0.03) 0, transparent 60%),
-        #020617;
+        #020617 !important;
+      background-image: none !important;
     }
     
     .newsletter-hero::before {

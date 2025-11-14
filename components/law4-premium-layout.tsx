@@ -4,7 +4,7 @@ import { Law04Hero } from '@/components/laws/law04-hero'
 
 export function Law4PremiumLayout() {
   return (
-    <div className="min-h-screen bg-background grain-texture">
+    <div className="min-h-screen bg-[#020617] grain-texture">
       {/* Hero Section */}
       <Law04Hero />
 
