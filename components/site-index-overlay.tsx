@@ -18,7 +18,7 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
   const contentRef = useRef<HTMLDivElement>(null)
   const [isAnimating, setIsAnimating] = useState(false)
 
-  // Close on ESC key
+  // Close on ESC key and prevent background scroll
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && open) {
@@ -28,13 +28,19 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
 
     if (open) {
       document.addEventListener('keydown', handleEscape)
+      // Prevent background scroll on mobile
       document.body.style.overflow = 'hidden'
+      document.body.style.position = 'fixed'
+      document.body.style.width = '100%'
       setIsAnimating(true)
     }
 
     return () => {
       document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
+      // Restore scroll
+      document.body.style.overflow = ''
+      document.body.style.position = ''
+      document.body.style.width = ''
       setIsAnimating(false)
     }
   }, [open, onClose])
@@ -107,13 +113,14 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
     <div
       ref={overlayRef}
       className={cn(
-        'fixed inset-0 z-[9999] backdrop-blur-md',
+        'fixed inset-0 z-[60] backdrop-blur-sm',
         'transition-all duration-350 ease-out',
         isAnimating ? 'opacity-100' : 'opacity-0',
-        'grain-texture grid-overlay'
+        'grain-texture grid-overlay',
+        'flex items-start justify-center'
       )}
       style={{
-        backgroundColor: 'rgba(11, 15, 25, 0.98)',
+        backgroundColor: 'rgba(2, 6, 23, 0.96)',
         animation: open ? 'fadeInUp 0.35s ease-out forwards' : 'none',
       }}
       role="dialog"
@@ -122,10 +129,10 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
     >
       <div
         ref={contentRef}
-        className="h-full overflow-y-auto overscroll-contain site-index-scroll flex flex-col"
+        className="relative w-full max-w-2xl mx-auto h-full max-h-[min(90vh,640px)] bg-[#020617] text-slate-100 overflow-y-auto overscroll-contain site-index-scroll"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="container mx-auto px-6 max-w-screen-2xl py-12 md:py-20 lg:py-24 relative z-10 min-h-full">
+        <div className="container mx-auto px-6 pt-16 pb-10 relative z-10">
           {/* Close Button */}
           <div className="flex justify-end mb-12 md:mb-16">
             <button
@@ -138,7 +145,7 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
           </div>
 
           {/* Main Content */}
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-16 lg:gap-24">
             {/* Left Column - Pages */}
             <div className="fade-in">
               <h2

@@ -142,7 +142,7 @@ export default function LawPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <article className="min-h-screen bg-background grain-texture">
+    <article className="min-h-screen bg-[#020617] grain-texture">
       {/* Hero Section */}
       <section className="relative py-32 md:py-48 border-b border-accent/10 cinematic-hero">
         <div className="container mx-auto px-6 max-w-screen-2xl relative z-10">
