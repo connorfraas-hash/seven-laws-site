@@ -4503,11 +4503,11 @@ html, body {
   overflow: hidden;
 }
 
-/* Mobile: Ensure consistent dark branding, reduce bright gradients */
+/* Mobile: Ensure consistent dark branding, reduce bright gradients to very subtle */
 @media (max-width: 768px) {
   .home-laws-section {
-    background: radial-gradient(circle at top, rgba(46, 106, 255, 0.08) 0, transparent 55%),
-                radial-gradient(circle at bottom, rgba(220, 179, 96, 0.06) 0, transparent 60%),
+    background: radial-gradient(circle at top, rgba(46, 106, 255, 0.03) 0, transparent 55%),
+                radial-gradient(circle at bottom, rgba(220, 179, 96, 0.02) 0, transparent 60%),
                 #020617;
   }
 }
