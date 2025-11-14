@@ -79,6 +79,9 @@
 html, body {
   overflow-x: hidden;
   position: relative;
+  min-height: 100%;
+  background: #020617; /* Dark navy background for all breakpoints */
+  color: #e5e7eb;
 }
 
 * {
@@ -91,11 +94,14 @@ html, body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    background: #020617 !important; /* Dark navy override for all breakpoints */
+    color: #e5e7eb;
     font-family: var(--font-inter), system-ui, sans-serif;
     font-size: clamp(16px, 1.125vw, 20px);
     line-height: 1.65;
     letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-newsreader), serif;

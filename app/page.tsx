@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <ScrollRevealProvider>
-      <div className="min-h-screen bg-background grain-texture">
+      <div className="min-h-screen bg-[#020617] grain-texture">
         {/* Cinematic Hero Section with Dynamic Compass */}
         <HomeHero />
 
