@@ -2379,6 +2379,35 @@ html, body {
   background-size: 40px 40px;
 }
 
+/* Site Index Overlay - Mobile fixes */
+@media (max-width: 768px) {
+  /* Ensure proper scrolling on mobile */
+  [role="dialog"] {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Reduce padding on mobile for better space usage */
+  [role="dialog"] .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  
+  /* Stack columns on mobile without forcing full height */
+  [role="dialog"] .grid {
+    gap: 2rem;
+  }
+  
+  /* Ensure text is readable on mobile */
+  [role="dialog"] h2,
+  [role="dialog"] h3,
+  [role="dialog"] a,
+  [role="dialog"] span {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
 @keyframes fog-drift-slow {
   0% {
     transform: translate3d(0, 0, 0) scale(1.02);
@@ -4472,6 +4501,15 @@ html, body {
               #020617;
   color: #f9fafb;
   overflow: hidden;
+}
+
+/* Mobile: Ensure consistent dark branding, reduce bright gradients */
+@media (max-width: 768px) {
+  .home-laws-section {
+    background: radial-gradient(circle at top, rgba(46, 106, 255, 0.08) 0, transparent 55%),
+                radial-gradient(circle at bottom, rgba(220, 179, 96, 0.06) 0, transparent 60%),
+                #020617;
+  }
 }
 
 .home-laws-inner {

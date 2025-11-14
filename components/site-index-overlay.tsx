@@ -122,10 +122,11 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
     >
       <div
         ref={contentRef}
-        className="h-full overflow-y-auto"
+        className="h-full overflow-y-auto overscroll-contain"
+        style={{ WebkitOverflowScrolling: 'touch' } as React.CSSProperties}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="container mx-auto px-6 max-w-screen-2xl py-12 md:py-20 lg:py-24 relative z-10">
+        <div className="container mx-auto px-6 max-w-screen-2xl py-12 md:py-20 lg:py-24 relative z-10 min-h-full">
           {/* Close Button */}
           <div className="flex justify-end mb-12 md:mb-16">
             <button
@@ -138,7 +139,7 @@ export function SiteIndexOverlay({ open, onClose }: SiteIndexOverlayProps) {
           </div>
 
           {/* Main Content */}
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 lg:gap-24">
             {/* Left Column - Pages */}
             <div className="fade-in">
               <h2
